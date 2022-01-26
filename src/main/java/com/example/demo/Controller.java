@@ -57,9 +57,9 @@ public class Controller {
 	@GetMapping(path="/getbook/{id}",produces="application/json")
 	public Book getBookById(@PathVariable("id") int id) {
 		Optional<Book> book  = bookRepo.findById(id);
-		if(book.isEmpty()) {
-			throw new ResponseStatusException(HttpStatus.NOT_FOUND, "book id not found !");
-		}
+// 		if(book.isEmpty()) {
+// 			throw new ResponseStatusException(HttpStatus.NOT_FOUND, "book id not found !");
+// 		}
 		return book.get();
 	}
 	
